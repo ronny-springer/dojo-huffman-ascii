@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Simple ASCII chars data complession by Huffman</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body ng-app="HuffmanApp">
+	<div ng-controller="HuffmanInputController as text">
+		<h2>ASCII string converter into bits by Huffman</h2>
+		<input type="text" name="" value="" ng-model="text.plainString" placeholder="Enter your words" maxlength="140">
+		<button ng-click="text.encodeString()">Encode!</button>
+
+		<p ng-if=" text.plainString ">
+			<strong>Encoded String</strong><br>
+			{{ text.plainString | encode }}
+			<button ng-click="text.decodeString()">Decode!</button>
+		</p>
+
+		<p ng-if=" text.plainString ">
+			<strong>Decoded String</strong><br>
+			{{ text.plainString | decode }}
+		</p>
+	</div>
+
+	<script src="angular.min.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>
